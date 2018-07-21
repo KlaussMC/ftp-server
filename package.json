@@ -1,0 +1,30 @@
+{
+  "name": "ftp-server",
+  "version": "1.0.0",
+  "description": "FTP server GUI",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KlaussMC/ftp-server.git"
+  },
+  "keywords": [
+    "FTP-Server",
+    "FTP-Client",
+    "FTP"
+  ],
+  "author": "Jacob Schneider",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KlaussMC/ftp-server/issues"
+  },
+  "homepage": "https://github.com/KlaussMC/ftp-server#readme",
+  "dependencies": {
+    "electron": "^2.0.5",
+    "electron-dialogbox": "^0.3.4",
+    "ftp-srv": "^2.19.2",
+    "krakendb": "^1.6.2"
+  }
+}
