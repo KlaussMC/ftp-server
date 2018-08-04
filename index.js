@@ -10,6 +10,8 @@ const {app, BrowserWindow, Menu, ipcMain} = electron;
 
 let mainWindow, optionsWindow
 
+let profile = 1;
+
 app.on("ready", () => {
 	mainWindow = new BrowserWindow({});
 	mainWindow.loadURL(url.format({
@@ -24,9 +26,11 @@ app.on("ready", () => {
 
 	ipcMain.on('options', (e, options) => {
 		console.log(options);
-		backend.saveSettings(options);
+		backend.saveSettings(options, profile);
 	})
-
+	ipcMain.on("startServer", () => {
+		backend.startServer(profile);
+	})
 })
 
 let mmt = [
@@ -44,7 +48,7 @@ let mmt = [
 						protocol: 'file:',
 						slashes: true }
 					))
-					// optionsWindow.openDevTools()
+					optionsWindow.openDevTools()
 				} // it's async because we want the server to keep running while this window is open.
 			}
 		]

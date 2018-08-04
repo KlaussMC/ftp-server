@@ -13,9 +13,10 @@
 
     </head>
     <body>
-        <select>
+        <select onchange="setProfile(this)" id="profile">
             <option selected disabled hidden>Profile</option>
             <option>1</option>
+            <option>New Profile</option>
         </select>
         <form class="options">
             <input type="number" class="ftp-port" min="1" max="65535" value="21", placeholder="The port your server will listen on" id="ftp-port">

@@ -3,6 +3,8 @@ const ftp = require('ftp-srv');
 
 const { spawn } = require('child_process');
 
+let server;
+
 db.setDefaultLocation(__dirname);
 if (db.dbexists('settings'))
 	db.loaddb('settings');
@@ -11,8 +13,9 @@ else {
 	db.exportdb();
 }
 
-module.exports.startServer = function (profile) {
-	spawn('node ./server.js', [profile])
+module.exports.saveSettings = options => {
+	// db.setItem()
 }
-
-// let server = new ftp()
+module.exports.startServer = function (profile) {
+	// server = spawn('node ./server.js', [profile]);
+}
